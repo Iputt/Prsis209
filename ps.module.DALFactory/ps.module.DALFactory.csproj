@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>09632adc-d4d3-4e9d-b35f-9316d1e7272f</ProjectGuid>
+    <ProjectGuid>0d711a7c-28b6-4b6c-9cdb-80c995f9aadc</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ps.module.BLL</RootNamespace>
-    <AssemblyName>ps.module.BLL</AssemblyName>
+    <RootNamespace>ps.module.DALFactory</RootNamespace>
+    <AssemblyName>ps.module.DALFactory</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

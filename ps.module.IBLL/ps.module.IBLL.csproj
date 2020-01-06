@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>09632adc-d4d3-4e9d-b35f-9316d1e7272f</ProjectGuid>
+    <ProjectGuid>58d3a72b-f4cd-42ce-9810-727f2a40211e</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ps.module.BLL</RootNamespace>
-    <AssemblyName>ps.module.BLL</AssemblyName>
+    <RootNamespace>ps.module.IBLL</RootNamespace>
+    <AssemblyName>ps.module.IBLL</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

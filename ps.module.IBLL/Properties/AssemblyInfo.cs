@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("ps.module.BLL")]
+[assembly: AssemblyTitle("ps.module.IBLL")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ps.module.BLL")]
+[assembly: AssemblyProduct("ps.module.IBLL")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("09632adc-d4d3-4e9d-b35f-9316d1e7272f")]
+[assembly: Guid("58d3a72b-f4cd-42ce-9810-727f2a40211e")]
 
 // 程序集的版本信息由下列四个值组成: 
 //
