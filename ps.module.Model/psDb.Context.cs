@@ -25,6 +25,6 @@ namespace ps.module.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<users> users { get; set; }
+        public virtual DbSet<User> users { get; set; }
     }
 }

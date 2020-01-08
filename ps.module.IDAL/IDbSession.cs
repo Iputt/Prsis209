@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ps.module.DAL
+namespace ps.module.IDAL
 {
-    public class Class1
+    public interface IDbSession
     {
+        int SaveChanges();
     }
 }

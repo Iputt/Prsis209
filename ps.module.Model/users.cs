@@ -12,7 +12,7 @@ namespace ps.module.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class users
+    public partial class User
     {
         public int UserID { get; set; }
         public string Name { get; set; }
