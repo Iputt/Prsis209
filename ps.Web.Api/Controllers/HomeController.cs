@@ -8,11 +8,13 @@ namespace ps.Web.Api.Controllers
 {
     public class HomeController : Controller
     {
+        /// <summary>
+        /// 直接重定向到swagger 页面
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-
-            return View();
+            return Redirect("swagger");
         }
     }
 }

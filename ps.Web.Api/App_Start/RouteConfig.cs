@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ps.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,7 +13,12 @@ namespace ps.Web.Api
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            var isSwaggerIndex = AppConfig.GetSetting("swagger_index", "true");
+            //System.Configuration.ConfigurationManager.AppSettings["swagger_index"];
+            if (isSwaggerIndex.ToLower() != "true")
+            {
+                routes.IgnoreRoute("");
+            }
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
