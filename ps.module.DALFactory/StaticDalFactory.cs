@@ -9,15 +9,12 @@ namespace ps.module.DALFactory
 {
     public class StaticDalFactory
     {
-        private static string assemblyName = System.Configuration.ConfigurationManager.AppSettings["DalAssembly"];
+        private static string assemblyName = System.Configuration.ConfigurationManager.AppSettings["DalAssemblyName"];
 
         public static T GetDal<T>(string name) where T : class, new()
         {
-            StringBuilder type = new StringBuilder();
-            type.Append(assemblyName);
-            type.Append(".");
-            type.Append(name);
-            return Assembly.Load(assemblyName).CreateInstance(type.ToString()) as T;
+            var type = string.Format("{0}.{1}Dal", assemblyName, name);
+            return Assembly.Load(assemblyName).CreateInstance(type) as T;
         }
     }
 }

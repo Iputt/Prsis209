@@ -4,46 +4,123 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="psdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="users">
+    <Schema Namespace="psdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ps_data_adjust">
           <Key>
-            <PropertyRef Name="UserID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="250" />
-          <Property Name="Age" Type="int" />
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="p_title" Type="nvarchar" MaxLength="256" />
+          <Property Name="p_college" Type="nvarchar" MaxLength="256" />
+          <Property Name="p_major" Type="nvarchar" MaxLength="256" />
+          <Property Name="p_learnStyle" Type="nvarchar" MaxLength="256" />
+          <Property Name="p_enrolment" Type="int" />
+          <Property Name="p_releaseTime" Type="datetime" />
+          <Property Name="p_contactMode" Type="datetime" />
+          <Property Name="p_content" Type="nvarchar" MaxLength="256" />
+          <Property Name="p_spare" Type="nvarchar" MaxLength="1024" />
+          <Property Name="IsDeleted" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="ps_sys_user">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="avatarUrl" Type="nvarchar" MaxLength="256" />
+          <Property Name="city" Type="nvarchar" MaxLength="128" />
+          <Property Name="country" Type="nvarchar" MaxLength="128" />
+          <Property Name="gender" Type="char" MaxLength="10" />
+          <Property Name="lang" Type="nvarchar" MaxLength="1" />
+          <Property Name="nickName" Type="nvarchar" MaxLength="128" />
+          <Property Name="province" Type="nvarchar" MaxLength="128" />
+          <Property Name="remark" Type="nvarchar" MaxLength="128" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="IsDeleted" Type="char" MaxLength="10" />
         </EntityType>
         <EntityContainer Name="psdbModelStoreContainer">
-          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ps_data_adjust" EntityType="Self.ps_data_adjust" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ps_sys_user" EntityType="Self.ps_sys_user" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="psdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="users">
-          <Key>
-            <PropertyRef Name="UserID" />
-          </Key>
-          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="Age" Type="Int32" />
-        </EntityType>
         <EntityContainer Name="psdbEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="users" EntityType="Self.users" />
+          <EntitySet Name="ps_data_adjust" EntityType="psdbModel.ps_data_adjust" />
+          <EntitySet Name="ps_sys_user" EntityType="psdbModel.ps_sys_user" />
         </EntityContainer>
+        <EntityType Name="ps_data_adjust">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="p_title" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="p_college" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="p_major" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="p_learnStyle" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="p_enrolment" Type="Int32" />
+          <Property Name="p_releaseTime" Type="DateTime" Precision="3" />
+          <Property Name="p_contactMode" Type="DateTime" Precision="3" />
+          <Property Name="p_content" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="p_spare" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ps_sys_user">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="avatarUrl" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="city" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="country" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="lang" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="nickName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="province" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="remark" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="psdbModelStoreContainer" CdmEntityContainer="psdbEntities">
-          <EntitySetMapping Name="users">
-            <EntityTypeMapping TypeName="psdbModel.users">
-              <MappingFragment StoreEntitySet="users">
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
+          <EntitySetMapping Name="ps_data_adjust">
+            <EntityTypeMapping TypeName="psdbModel.ps_data_adjust">
+              <MappingFragment StoreEntitySet="ps_data_adjust">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="p_spare" ColumnName="p_spare" />
+                <ScalarProperty Name="p_content" ColumnName="p_content" />
+                <ScalarProperty Name="p_contactMode" ColumnName="p_contactMode" />
+                <ScalarProperty Name="p_releaseTime" ColumnName="p_releaseTime" />
+                <ScalarProperty Name="p_enrolment" ColumnName="p_enrolment" />
+                <ScalarProperty Name="p_learnStyle" ColumnName="p_learnStyle" />
+                <ScalarProperty Name="p_major" ColumnName="p_major" />
+                <ScalarProperty Name="p_college" ColumnName="p_college" />
+                <ScalarProperty Name="p_title" ColumnName="p_title" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ps_sys_user">
+            <EntityTypeMapping TypeName="psdbModel.ps_sys_user">
+              <MappingFragment StoreEntitySet="ps_sys_user">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="province" ColumnName="province" />
+                <ScalarProperty Name="nickName" ColumnName="nickName" />
+                <ScalarProperty Name="lang" ColumnName="lang" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="avatarUrl" ColumnName="avatarUrl" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

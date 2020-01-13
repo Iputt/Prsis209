@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ps.module.IBLL
 {
-    public interface IUserService:IBaseService<User>
+    public interface IUserService:IBaseService<ps_sys_user>
     {
     }
 }
