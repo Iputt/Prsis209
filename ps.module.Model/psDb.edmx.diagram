@@ -5,7 +5,8 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="4e71a04bed2e44d1a29556f2096aab7c" Name="Diagram1">
-        <EntityTypeShape EntityType="psdbModel.users" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="psdbModel.ps_data_adjust" Width="1.5" PointX="2.125" PointY="0.5" />
+        <EntityTypeShape EntityType="psdbModel.ps_sys_user" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

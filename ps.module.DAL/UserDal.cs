@@ -8,7 +8,7 @@ using ps.module.Model;
 
 namespace ps.module.DAL
 {
-    public class UserDal : BaseDal<User>, IUserDal
+    public class UserDal : BaseDal<ps_sys_user>, IUserDal
     {
     }
 }
