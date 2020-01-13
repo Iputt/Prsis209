@@ -7,6 +7,8 @@ namespace ps.module.DALFactory
     {
         #region all dal
         public IUserDal UserDal => StaticDalFactory.GetDal<UserDal>("User");
+
+        public IAdjustDal AdjustDal => StaticDalFactory.GetDal<AdjustDal>("Adjust");
         #endregion
 
         public int SaveChanges()

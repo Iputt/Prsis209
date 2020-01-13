@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAdjustDal.cs" />
     <Compile Include="IBaseDal.cs" />
     <Compile Include="IDbSession.cs" />
     <Compile Include="IUserDal.cs" />

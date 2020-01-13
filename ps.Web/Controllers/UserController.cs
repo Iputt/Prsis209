@@ -11,6 +11,7 @@ namespace ps.Web.Controllers
     public class UserController : Controller
     {
         readonly IUserService UserService = new UserService();
+
         // GET: User
         public ActionResult Index()
         {
@@ -25,7 +26,7 @@ namespace ps.Web.Controllers
         [HttpPost]
         public void AddProcess()
         {
-            var t = UserService.Query(u => u.gender == "1").FirstOrDefault();          
+            var t = UserService.Query(u => u.gender == "1").FirstOrDefault();
         }
     }
 }
