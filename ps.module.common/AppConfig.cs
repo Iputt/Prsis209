@@ -49,18 +49,18 @@ namespace ps.Common
         /// <param name="connectionname"></param>
         /// <param name="rwsplit">读写分离开关</param>
         /// <returns></returns>
-        //public static string GetConnectionString(string connectionname, bool rwsplit = false)
-        //{
-        //    ConnectionStringSettings connection = null;
-        //    if (rwsplit)
-        //    {
-        //        connection = ConfigurationManager.ConnectionStrings[string.Format("{0}read", connectionname)];
-        //    }
-        //    if (connection == null)
-        //        connection = ConfigurationManager.ConnectionStrings[connectionname];
-        //    if (connection != null)
-        //        return connection.ConnectionString;
-        //    return "";
-        //}
+        public static string GetConnectionString(string connectionname, bool rwsplit = false)
+        {
+            ConnectionStringSettings connection = null;
+            if (rwsplit)
+            {
+                connection = ConfigurationManager.ConnectionStrings[string.Format("{0}read", connectionname)];
+            }
+            if (connection == null)
+                connection = ConfigurationManager.ConnectionStrings[connectionname];
+            if (connection != null)
+                return connection.ConnectionString;
+            return "";
+        }
     }
 }
