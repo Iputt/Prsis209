@@ -5,14 +5,16 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ps.module.IDAL
+namespace ps.module.IBLL
 {
-    public interface IBaseDal<T> where T : class, new()
+    public interface IBaseService<T> where T : class, new()
     {
         List<T> Query(Expression<Func<T, bool>> where);
 
         List<T> PageQuery<S>(int pageSize, int pageIndex, out int total,
-            Expression<Func<T, bool>> where, Expression<Func<T, S>> orderBy, bool isAsc);
+            Expression<Func<T, bool>> whereLambda,
+            Expression<Func<T, S>> orderByLambda,
+            bool isAsc);
 
         T Add(T item);
 

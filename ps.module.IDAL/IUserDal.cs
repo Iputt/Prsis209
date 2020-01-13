@@ -7,7 +7,7 @@ using ps.module.Model;
 
 namespace ps.module.IDAL
 {
-    public interface IUserDal:IBaseDal<User>
+    public interface IUserDal:IBaseDal<ps_sys_user>
     {
     }
 }
