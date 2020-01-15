@@ -23,7 +23,23 @@ namespace ps.Web.Api.Controllers
         {
             return View();
         }
+        /// <summary>
+        /// 执行抓取数据命令
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Spider()
+        {
+            try
+            {
+                SpiderData("http://muchong.com/bbs/kaoyan.php?action=adjust&type=1");
+            }
+            catch(Exception e)
+            {
+                //记录日志
+            }
+            return View();
+        }
+        public void SpiderData(string url)
         {
             HtmlWeb webClient = new HtmlWeb();
             webClient.OverrideEncoding = Encoding.GetEncoding("gb2312");
@@ -35,14 +51,15 @@ namespace ps.Web.Api.Controllers
                 return true;
             };
             webClient.PreRequest += handler;
-            HtmlDocument doc = webClient.Load("http://muchong.com/bbs/kaoyan.php?action=adjust&type=1");
+            HtmlDocument doc = webClient.Load(url);
             HtmlNodeCollection objects = doc.DocumentNode.SelectNodes("//div[@class='wrapper']/table/tbody[@class='forum_body_manage']/tr");
             int count = 0;
             foreach (var item in objects)
             {
-                string basicPath = string.Format( "//div[@class='wrapper']/table/tbody[@class='forum_body_manage']/tr[{0}]/",++count);
+                string basicPath = string.Format("//div[@class='wrapper']/table/tbody[@class='forum_body_manage']/tr[{0}]/", ++count);
                 AdjustService.Add(new ps_data_adjust()
                 {
+                    //后续使用反射优化
                     Id = Guid.NewGuid(),
                     Created = DateTime.Now,
                     p_title = doc.DocumentNode.SelectSingleNode(basicPath + "td[@class='xmc_lp20']/a[@class='xmc_ft12']").InnerText,
@@ -57,52 +74,7 @@ namespace ps.Web.Api.Controllers
                     IsDeleted = "0"
                 });
             }
-            return View();
-            //for (int j = 1; j < objects.Count; j++)
-            //{
-            //    //string url = doc.DocumentNode.SelectSingleNode("//div[@class='houseList']/dl[@dataflag='bg']["+j+"]/dt/a").Attributes["href"].Value;
-            //    //string imgurl = doc.DocumentNode.SelectSingleNode("//div[@class='houseList']/dl[@dataflag='bg'][" + j + "]/dt/a/img").Attributes["src"].Value;
-            //    string basicPath = "//div[@class='wrapper']/table/tbody[@class='forum_body_manage']/tr[" + j + "]/";
-            //    string title = doc.DocumentNode.SelectSingleNode(basicPath + "td[@class='xmc_lp20']/a[@class='xmc_ft12']").InnerText;
-            //    string college = doc.DocumentNode.SelectSingleNode(basicPath + "td[2]").InnerText;
-
-            //    string major = doc.DocumentNode.SelectSingleNode(basicPath + "td[3]").InnerText;
-
-            //    string learntype = "";
-            //    string countstr = doc.DocumentNode.SelectSingleNode(basicPath + "td[4]").InnerText;
-            //    int count = int.Parse(countstr);
-            //    string contract = "";
-            //    string content = doc.DocumentNode.SelectSingleNode(basicPath + "td[@class='xmc_lp20']/a[@class='xmc_ft12']").InnerText;
-            //    string spare = doc.DocumentNode.SelectSingleNode(basicPath + "td[@class='xmc_lp20']/a[@class='xmc_ft12']").InnerText;
-            //    DateTime now = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
-            //    char num = '0';
-            //    Guid guid = Guid.NewGuid();
-            //    SqlParameter[] sps ={
-            //    new SqlParameter("@Id",guid),
-            //    new SqlParameter("@Created",now),
-            //    new SqlParameter("@p_title",title),
-            //    new SqlParameter("@p_college",college),
-            //    new SqlParameter("@p_major",major),
-            //    new SqlParameter("@p_learnStyle",learntype),
-            //    new SqlParameter("@p_enrolment",count),
-            //    new SqlParameter("@p_releaseTime",now),
-            //    new SqlParameter("@p_contactMode",contract),
-            //    new SqlParameter("@p_content",content),
-            //    new SqlParameter("@p_spare",spare),
-            //    new SqlParameter("@IsDeleted",num),
-            //    };
-            //    string sql = "INSERT INTO ps_data_adjust values(@Id,@Created,@p_title,@p_college,@p_major,@p_learnStyle,@p_enrolment,@p_releaseTime,@p_contactMode,@p_content,@p_spare,@IsDeleted)";
-            //    try
-            //    {
-            //        //DbHelperSQL.ExecuteSql(sql, ConfigHelper.GetConnectionString("conn"), sps);
-            //    }
-            //    //catch (Exception ex)
-            //    catch
-            //    {
-            //        //Response.Write(ex.Message.ToString());
-            //        throw;
-            //    }
-            //}
+            return;
         }
     }
 }

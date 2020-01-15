@@ -19,14 +19,10 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>
-    </IISExpressSSLPort>
-    <IISExpressAnonymousAuthentication>
-    </IISExpressAnonymousAuthentication>
-    <IISExpressWindowsAuthentication>
-    </IISExpressWindowsAuthentication>
-    <IISExpressUseClassicPipelineMode>
-    </IISExpressUseClassicPipelineMode>
+    <IISExpressSSLPort>44379</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -243,6 +239,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SpiderController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -254,8 +251,12 @@
     <Compile Include="Extension\Handler\SessionControllerRouteHandler.cs" />
     <Compile Include="Extension\Handler\SessionRouteHandler.cs" />
     <Compile Include="Extension\Method\Common.cs" />
-    <Compile Include="Extension\Model\ApiResultModel.cs" />
-    <Compile Include="Extension\Model\LoginFormDto.cs" />
+    <Compile Include="Extension\PrsisDto\ApiResultModel.cs" />
+    <Compile Include="Extension\PrsisDto\BasicDto.cs" />
+    <Compile Include="Extension\PrsisDto\LoginFormDto.cs" />
+    <Compile Include="Extension\PrsisDto\LoginResultDto.cs" />
+    <Compile Include="Extension\PrsisDto\PageResultDto.cs" />
+    <Compile Include="Extension\PrsisDto\VerifyDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -291,6 +292,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

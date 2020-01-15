@@ -1,4 +1,4 @@
-﻿using ps.Web.Api.Extension.Model;
+﻿using ps.Web.Api.Extension;
 using System;
 using System.Linq;
 using System.Net.Http;

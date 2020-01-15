@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ps.Web.Api.Extension.Model
+namespace ps.Web.Api.Extension
 {
     /// <summary>
     /// 登录

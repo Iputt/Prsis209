@@ -44,6 +44,23 @@ namespace ps.Common
         }
 
         /// <summary>
+        /// 填充模板内容
+        /// </summary>
+        /// <param name="template">模板</param>
+        /// <param name="obj">填充参数</param>
+        /// <returns></returns>
+        private static string FormatString(string template, IDictionary<string, object> obj)
+        {
+            return System.Text.RegularExpressions.Regex.Replace(template, @"{{(\w+)}}", s =>
+            {
+                var key = s.Groups[1].Value;
+                if (obj != null && obj.ContainsKey(key) && obj[key] != null)
+                    return obj[key].ToString();
+                return "";
+            });
+        }
+
+        /// <summary>
         /// 获取连接字符串
         /// </summary>
         /// <param name="connectionname"></param>
