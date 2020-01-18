@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace ps.Web.Api.Extension
+namespace ps.Web.Api.Application
 {
     public class ApiResultModel
     {

@@ -243,7 +243,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SpiderController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="Extension\ApiClient\ApiClient.cs" />
     <Compile Include="Extension\Attribute\ApiResultAttribute.cs" />
     <Compile Include="Extension\Attribute\NoNeedAuth.cs" />
     <Compile Include="Extension\Attribute\SecurityFilterAttribute.cs" />
@@ -251,12 +250,6 @@
     <Compile Include="Extension\Handler\SessionControllerRouteHandler.cs" />
     <Compile Include="Extension\Handler\SessionRouteHandler.cs" />
     <Compile Include="Extension\Method\Common.cs" />
-    <Compile Include="Extension\PrsisDto\ApiResultModel.cs" />
-    <Compile Include="Extension\PrsisDto\BasicDto.cs" />
-    <Compile Include="Extension\PrsisDto\LoginFormDto.cs" />
-    <Compile Include="Extension\PrsisDto\LoginResultDto.cs" />
-    <Compile Include="Extension\PrsisDto\PageResultDto.cs" />
-    <Compile Include="Extension\PrsisDto\VerifyDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -339,6 +332,10 @@
     <ProjectReference Include="..\ps.module.Model\ps.module.Model.csproj">
       <Project>{cab67fe9-5665-4747-a8b5-42e3239eec6d}</Project>
       <Name>ps.module.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ps.Web.Api.Application\ps.Web.Api.Application.csproj">
+      <Project>{273001f3-1526-445f-bb09-91b4e73dd2ad}</Project>
+      <Name>ps.Web.Api.Application</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

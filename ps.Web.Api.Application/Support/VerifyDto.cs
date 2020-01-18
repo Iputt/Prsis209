@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ps.Web.Api.Extension
+namespace ps.Web.Api.Application
 {
     /// <summary>
     /// 验证信息存储对象

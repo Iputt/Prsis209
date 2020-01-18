@@ -7,7 +7,7 @@ using System.Web;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 
-namespace ps.Web.Api.Extension
+namespace ps.Web.Api.Application
 {
     public class Response
     {
@@ -123,8 +123,6 @@ namespace ps.Web.Api.Extension
     public class ApiClient
     {
         public string Url { get; private set; }
-
-        public string Mandt { get; private set; }
 
         public string UserName { get; private set; }
 

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ps.Web.Api.Extension 
-{ 
+namespace ps.Web.Api.Application
+{
     /// <summary>
     /// 返回给前台数据的Dto
     /// </summary>
