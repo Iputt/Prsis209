@@ -13,16 +13,13 @@ using System.Web.Mvc;
 
 namespace ps.Web.Api.Controllers
 {
+    /// <summary>
+    /// 爬虫程序
+    /// </summary>
     public class SpiderController : Controller
     {
         readonly IAdjustService AdjustService = new AdjustService();
 
-
-        // GET: Spider
-        public ActionResult Index()
-        {
-            return View();
-        }
         /// <summary>
         /// 执行抓取数据命令
         /// </summary>
@@ -39,6 +36,10 @@ namespace ps.Web.Api.Controllers
             }
             return View();
         }
+        /// <summary>
+        /// 抓取数据
+        /// </summary>
+        /// <param name="url"></param>
         public void SpiderData(string url)
         {
             HtmlWeb webClient = new HtmlWeb();

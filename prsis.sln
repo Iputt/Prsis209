@@ -33,6 +33,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ps.module.common", "ps.modu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ps.Web.Api.Application", "ps.Web.Api.Application\ps.Web.Api.Application.csproj", "{273001F3-1526-445F-BB09-91B4E73DD2AD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{FF9A220B-1AE9-4F9D-864A-F7765CD8E856}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PS.API", "PS.API\PS.API.csproj", "{7D801F7B-66C0-4CD4-8D27-47A618650AF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +83,10 @@ Global
 		{273001F3-1526-445F-BB09-91B4E73DD2AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{273001F3-1526-445F-BB09-91B4E73DD2AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{273001F3-1526-445F-BB09-91B4E73DD2AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D801F7B-66C0-4CD4-8D27-47A618650AF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D801F7B-66C0-4CD4-8D27-47A618650AF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D801F7B-66C0-4CD4-8D27-47A618650AF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D801F7B-66C0-4CD4-8D27-47A618650AF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +102,7 @@ Global
 		{ACDE4BBB-9520-4ABE-9DE8-A3A1345E8417} = {05D50CE2-B3F5-40EB-82FF-49A097E36A79}
 		{4BF55110-7287-45D6-858C-9BEF071546B6} = {3C82D1FE-0E85-49A1-A4F3-F695F3B77D46}
 		{273001F3-1526-445F-BB09-91B4E73DD2AD} = {1885A340-C8B6-4D4A-A10F-6527D87B1CEF}
+		{7D801F7B-66C0-4CD4-8D27-47A618650AF3} = {FF9A220B-1AE9-4F9D-864A-F7765CD8E856}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A485D287-CD25-4DBB-A882-3F82AF759991}
