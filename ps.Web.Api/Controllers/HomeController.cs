@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ps.module.BLL;
+using ps.module.IBLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,7 +16,17 @@ namespace ps.Web.Api.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
-            return Redirect("swagger");
+            SpiderController spider = new SpiderController();
+            return spider.Spider();
+            //IUserService userService = new UserService();
+            //var user = new module.Model.ps_sys_user()
+            //{
+            //    Id = new Guid(),
+            //    nickName = "123"
+            //};
+            //userService.Add(user);
+            //return null;
+            //return Redirect("swagger");
         }
     }
 }

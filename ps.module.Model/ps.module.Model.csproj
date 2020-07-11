@@ -182,6 +182,7 @@
       <LastGenOutput>psDb.Context.cs</LastGenOutput>
       <DependentUpon>psDb.edmx</DependentUpon>
     </Content>
+    <Content Include="psDb.edmx.sql" />
     <Content Include="psDb.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>psDb.edmx</DependentUpon>

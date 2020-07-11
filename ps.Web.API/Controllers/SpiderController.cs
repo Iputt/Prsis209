@@ -75,7 +75,6 @@ namespace ps.Web.Api.Controllers
                     IsDeleted = "0"
                 });
             }
-            return;
         }
     }
 }
